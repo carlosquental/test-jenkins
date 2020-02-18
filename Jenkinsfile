@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'hello world'
+                input 'this is an input'
             }
         }
     }
