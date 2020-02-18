@@ -1,4 +1,5 @@
-node {
+pipeline {
+    agent any
       stage('Test') {
           echo 'hello world'
           sh 'ls'
