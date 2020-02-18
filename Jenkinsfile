@@ -1,7 +1,7 @@
 node {
       stage('Test') {
           echo 'hello world'
-          sh 'aws --version'
+          sh 'ls'
           input 'this is an input'
       }
 }
