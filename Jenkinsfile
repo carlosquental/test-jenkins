@@ -1,20 +1,8 @@
-pipeline {
-    agent any
-    stages {
-      stage('Test') {
-          steps {
-              echo 'hello world'
-              sh 'ls'
-              input 'this is an input'
-          }
-      }
+node('docker') {
+    checkout scm
+    stage('Build') {
+        docker.image('node:6.3').inside {
+            sh 'npm --version'
+        }
     }
-      post {
-          success {
-              slackSend channel: '#lambda-notifications',
-                        color: 'good',
-                        message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
-          }
-      }
 }
-
