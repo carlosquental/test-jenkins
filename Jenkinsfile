@@ -1,19 +1,10 @@
-pipeline {
-   agent any
-   environment {
-       registry = "magalixcorp/k8scicd"
-       GOCACHE = "/tmp"
-   }
-   stages {
-       stage('Build') {
-           agent {
-               docker {
-                   image 'node'
-               }
-           }
-           steps {
-               sh 'npm --version'
-           }
-       }
-   }
+
+
+podTemplate {
+    node(POD_LABEL) {
+        stage('Run shell') {
+            sh 'echo hello world'
+        }
+    }
 }
+
