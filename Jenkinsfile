@@ -1,8 +1,19 @@
-node('docker') {
-    checkout scm
-    stage('Build') {
-        docker.image('node:6.3').inside {
-            sh 'npm --version'
-        }
-    }
+pipeline {
+   agent any
+   environment {
+       registry = "magalixcorp/k8scicd"
+       GOCACHE = "/tmp"
+   }
+   stages {
+       stage('Build') {
+           agent {
+               docker {
+                   image 'node'
+               }
+           }
+           steps {
+               sh 'npm --version'
+           }
+       }
+   }
 }
