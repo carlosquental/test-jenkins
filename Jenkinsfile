@@ -1,5 +1,5 @@
 /**
- * This pipeline describes a multi container job, running Maven and Golang builds
+ * This pipeline describes a multi container job
  */
 
 podTemplate(yaml: """
