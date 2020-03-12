@@ -22,6 +22,7 @@ spec:
     stage('NodeJS stuff') {
       container('node') {
         sh 'npm --version'
+        sh 'mkdir my_test_dir'
       }
     }
 
@@ -29,6 +30,7 @@ spec:
       container('aws-cli') {
         sh """
         aws --version
+        ls
         """
       }
     }
