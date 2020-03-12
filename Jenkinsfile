@@ -23,6 +23,7 @@ spec:
       container('node') {
         sh 'npm --version'
         sh 'mkdir my_other_dir'
+        sh 'yarn --version'
       }
     }
 
@@ -31,7 +32,6 @@ spec:
         sh """
         aws --version
         ls -lah
-        npm --version
         """
       }
     }
