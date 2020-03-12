@@ -31,6 +31,7 @@ spec:
         sh """
         aws --version
         ls -lah
+        npm --version
         """
       }
     }
