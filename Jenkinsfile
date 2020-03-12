@@ -30,7 +30,7 @@ spec:
       container('aws-cli') {
         sh """
         aws --version
-        ls
+        ls -lah
         """
       }
     }
