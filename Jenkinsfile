@@ -24,6 +24,7 @@ spec:
         sh 'npm --version'
         sh 'mkdir my_other_dir'
         sh 'yarn --version'
+        sh 'git clone git@bitbucket.org:SalesSeek/resdiary-instant-tasks.git'
       }
     }
 
