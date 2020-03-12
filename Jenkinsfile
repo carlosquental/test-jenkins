@@ -11,6 +11,10 @@ spec:
     image: node:12
     command: ['cat']
     tty: true
+  - name: aws-cli
+    image: mesosphere/aws-cli
+    command: ['cat']
+    tty: true
 """
   ) {
 
@@ -21,10 +25,10 @@ spec:
       }
     }
 
-    stage('Other part') {
-      container('node') {
+    stage('AWS cli') {
+      container('aws-cli') {
         sh """
-        echo 'hello'
+        aws --version
         """
       }
     }
