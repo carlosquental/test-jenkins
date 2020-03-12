@@ -33,6 +33,7 @@ spec:
         sh """
         aws --version
         ls -lah
+        echo 'hello'
         """
       }
     }
